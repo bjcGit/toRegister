@@ -1,0 +1,62 @@
+<h5 class="text-center">Sistema de control y registro</h5>
+<h4 class="text-center">Invitados</h4>
+
+<div class="row justify-content-center">
+    <div class="animated fadeIn faster">
+        <div class="col ">
+            <div class="card-body" style="width: 18rem;">
+
+                <form (ngSubmit)="guardar(f)" #f="ngForm">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" required placeholder="Cedula" [(ngModel)]="invitados.cedula" name="cedula">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" required placeholder="Apellido" [(ngModel)]="invitados.apellido" name="apellido">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" required placeholder="Nombre" [(ngModel)]="invitados.nombre" name="nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" required placeholder="R-H" [(ngModel)]="invitados.rh" name="rh">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" required placeholder="Temperatura" [(ngModel)]="invitados.temperatura" name="temperatura">
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <label> Estado: </label>
+
+                        <br>
+
+                        <button *ngIf="invitados.estado" (click)="invitados.estado = false" class="btn btn-success w-50" type="button">
+                                <i class="fa fa-smile-wink"></i> Ingreso
+                            </button>
+
+                        <button *ngIf="!invitados.estado" (click)="invitados.estado = true" class="btn btn-danger w-50" type="button">
+                                <i class="fa fa-dizzy"></i> salida
+                            </button>
+                    </div>
+
+                    <button class="btn btn-primary mr-1" routerLink="/inicio">
+                        <i class="fa fa-arrow-left"></i> Regresar
+                    </button>
+
+                    <button type="submit" class="btn btn-primary">
+                        Continuar  <i class="fa fa-save "></i>
+                     </button>
+
+                    <button class="btn btn-primary mt-2" routerLink="/invitados">
+                        Agregar
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
